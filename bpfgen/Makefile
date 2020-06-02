@@ -26,4 +26,4 @@ define Build/Compile
 	$(KERNEL_MAKE) SUBDIRS="$(PKG_BUILD_DIR)"
 endef 
 
-$(eval ($call KernelPackage,bpfgen))
+$(eval $(call BuildPackage,bpfgen))
