@@ -1,5 +1,4 @@
 include $(TOPDIR)/rules.mk
-include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=bpfgen
 PKG_LICENSE:=GPL-2.0
@@ -10,7 +9,6 @@ PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/kernel-defaults.mk
 
 define Package/bpfgen
   SECTION:=net
@@ -23,10 +21,6 @@ endef
 
 define Package/bpfgen/description
 	Userspace bpf generator
-endef
-
-define Build/Compile
-	$(KERNEL_MAKE) SUBDIRS="$(PKG_BUILD_DIR)"
 endef
 
 define Package/bpfgen/install
