@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-PKG_NAME:=bpfgen 
+PKG_NAME:=bpfgen
 PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Sebastien Delafond <sdelafond@gmail.com>
 PKG_VERSION:=0.0.1
@@ -13,16 +13,16 @@ define Package/bpfgen
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Firewall
-  TITLE:=Userspace bpf generator 
+  TITLE:=Userspace bpf generator
   DEPENDS:=+libnftnl +libmnl
   KCONFIG:=
-endef 
+endef
 
 define Package/bpfgen/description
-	Userspace bpf generator 
-endef 
+	Userspace bpf generator
+endef
 
-define Build/Compile 
+define Build/Compile
 	$(KERNEL_MAKE) SUBDIRS="$(PKG_BUILD_DIR)"
 endef
 
