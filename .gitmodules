@@ -1,3 +1,4 @@
 [submodule "bpfgen/src"]
 	path = bpfgen/src
 	url = git@github.com:TiffanyKalin-untangle/bpfgen.git
+	branch = framework
