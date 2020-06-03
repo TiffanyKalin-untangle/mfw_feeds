@@ -14,7 +14,7 @@ define Package/bpfgen
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpf generator
-  DEPENDS:=+libnftnl +libmnl
+  DEPENDS:=+libnftnl +libmnl +jansson
   KCONFIG:=
 endef
 
