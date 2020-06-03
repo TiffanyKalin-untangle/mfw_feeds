@@ -25,7 +25,7 @@ endef
 
 define Package/bpfgen/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bpfgen $(1)/usr/bin/bpfgen
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/bpfgen $(1)/usr/bin/bpfgen
 endef
 
 $(eval $(call BuildPackage,bpfgen))
