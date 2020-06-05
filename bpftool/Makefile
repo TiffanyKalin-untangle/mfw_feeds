@@ -5,6 +5,9 @@ PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Sebastien Delafond <sdelafond@gmail.com>
 PKG_VERSION:=0.0.1
 
+PKG_FIXUP:=autoreconf
+PKG_INSTALL:=1
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/bpftool
@@ -12,7 +15,7 @@ define Package/bpftool
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpftool
-  DEPENDS:=
+  DEPENDS:=+libelf +libbpf
   KCONFIG:=
 endef
 
