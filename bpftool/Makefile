@@ -5,27 +5,24 @@ PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Sebastien Delafond <sdelafond@gmail.com>
 PKG_VERSION:=0.0.1
 
-PKG_FIXUP:=autoreconf
-PKG_INSTALL:=1
-
 include $(INCLUDE_DIR)/package.mk
 
 define Package/bpftool
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Firewall
-  TITLE:=Userspace bpf generator
+  TITLE:=Userspace bpftool
   DEPENDS:=
   KCONFIG:=
 endef
 
-define Package/bpfgen/description
-	Userspace bpf generator
+define Package/bpftool/description
+	Userspace bpftool
 endef
 
-define Package/bpfgen/install
+define Package/bpftool/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/bpftool $(1)/usr/bin/bpftool
 endef
 
-$(eval $(call BuildPackage,bpfgen))
+$(eval $(call BuildPackage,bpftool))
