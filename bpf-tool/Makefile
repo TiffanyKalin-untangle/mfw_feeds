@@ -3,10 +3,12 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=bpf-tool
 PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Tiffany Kalin <tkalin@untangle.com>
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/TiffanyKalin-untangle/bpfgen.git
-
 PKG_VERSION:=v0.1.0
+
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/Netronome/bpf-tool.git
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/bpf-tool
@@ -14,7 +16,7 @@ define Package/bpf-tool
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpf-tool
-  URL:=https://github.com/TiffanyKalin-untangle/bpfgen
+  URL:=https://github.com/Netronome/bpf-tool.git
   DEPENDS:=+libnftnl +libmnl +jansson
   KCONFIG:=CONFIG_BPF=y CONFIG_BPF_SYSCALL=y \
 	   CONFIG_BPF_JIT=y CONFIG_HAVE_EBPF_JIT=y 
