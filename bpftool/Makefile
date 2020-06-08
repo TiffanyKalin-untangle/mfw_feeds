@@ -1,5 +1,5 @@
 include $(TOPDIR)/rules.mk
-include $(TOPDIR)/kernel.mk
+include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=bpftool
 PKG_LICENSE:=GPL-2.0
