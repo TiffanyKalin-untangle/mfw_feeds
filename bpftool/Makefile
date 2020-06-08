@@ -6,7 +6,6 @@ PKG_MAINTAINER:=Sebastien Delafond <sdelafond@gmail.com>
 PKG_VERSION:=0.0.1
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/Netronome/bpf-tool.git
-PKG_HASH:=96d6c0a9bc94a7c01e07d9edc1b71c8c134d43bc
 
 include $(INCLUDE_DIR)/package.mk
 
