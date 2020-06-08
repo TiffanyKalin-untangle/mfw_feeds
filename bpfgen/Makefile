@@ -3,7 +3,10 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=bpfgen
 PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Sebastien Delafond <sdelafond@gmail.com>
-PKG_VERSION:=0.0.1
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/TiffanyKalin-untangle/bpfgen.git
+
+include ../version.mk
 
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
@@ -15,8 +18,9 @@ define Package/bpfgen
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpf generator
+  URL:=https://github.com/TiffanyKalin-untangle/bpfgen
   DEPENDS:=+libnftnl +libmnl +jansson
-  KCONFIG:=
+  KCONFIG:=CONFIG_BPF=y CONFIG
 endef
 
 define Package/bpfgen/description
