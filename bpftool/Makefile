@@ -19,7 +19,7 @@ define Package/bpftool
   KCONFIG:=
 endef
 
-include $(INCLUDE_DIR)/kernel.mk
+include $(INCLUDE_DIR)/kernel-defaults.mk
 
 define Package/bpftool/description
 	Userspace bpftool
