@@ -15,7 +15,8 @@ define Package/bpftool
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpftool
-  DEPENDS:=+libelf +libbpf +libbfd
+  URL:=https://github.com/Netronome/bpf-tool.git
+  DEPENDS:=+libelf +libbpf +libbfd +libopcodes
   KCONFIG:=
 endef
 
