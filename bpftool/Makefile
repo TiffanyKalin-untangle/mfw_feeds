@@ -35,4 +35,4 @@ define Package/bpftool/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/bpftool $(1)/usr/bin/bpftool
 endef
 
-$(eval $(call BuildPackage,bpftool))
+$(eval $(call KernelPackage,bpftool))
