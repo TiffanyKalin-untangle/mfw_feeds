@@ -27,7 +27,7 @@ define Package/bpftool/description
 endef
 
 define Build/Compile 
-	$(KERNEL_MAKE) SUBDIRS="(PKG_BUILD_DIR)"
+	$(KERNEL_MAKE) SUBDIRS="$(PKG_BUILD_DIR)"
 endef
 
 define Package/bpftool/install
