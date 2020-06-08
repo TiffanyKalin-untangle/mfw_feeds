@@ -20,7 +20,8 @@ define Package/bpfgen
   TITLE:=Userspace bpf generator
   URL:=https://github.com/TiffanyKalin-untangle/bpfgen
   DEPENDS:=+libnftnl +libmnl +jansson
-  KCONFIG:=CONFIG_BPF=y 
+  KCONFIG:=CONFIG_BPF=y CONFIG_BPF_SYSCALL=y \
+	   CONFIG_BPF_JIT=y CONFIG_HAVE_EBPF_JIT=y 
 endef
 
 define Package/bpfgen/description
