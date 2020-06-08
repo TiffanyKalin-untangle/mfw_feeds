@@ -1,5 +1,4 @@
 include $(TOPDIR)/rules.mk
-include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=bpftool
 PKG_LICENSE:=GPL-2.0
@@ -20,14 +19,8 @@ define Package/bpftool
   KCONFIG:=
 endef
 
-include $(INCLUDE_DIR)/kernel-defaults.mk
-
 define Package/bpftool/description
 	Userspace bpftool
-endef
-
-define Build/Compile 
-	$(KERNEL_MAKE) SUBDIRS="$(PKG_BUILD_DIR)"
 endef
 
 define Package/bpftool/install
@@ -35,4 +28,4 @@ define Package/bpftool/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/bpftool $(1)/usr/bin/bpftool
 endef
 
-$(eval $(call KernelPackage,bpftool))
+$(eval $(call BuildPackage,bpftool))
