@@ -30,6 +30,10 @@ define Package/bpf-tool/description
 	Userspace bpf-tool
 endef
 
+define Build/Configure
+	$(call Build/Configure/Default,--with-linux-headers=$(LINUX_DIR))
+endef
+
 define Package/bpf-tool/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bpf-tool $(1)/usr/bin/bpf-tool
