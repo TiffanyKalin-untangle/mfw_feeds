@@ -15,7 +15,7 @@ define Package/bpftool
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpftool
-  DEPENDS:=+libelf +libbpf +libbfd +libopcodes
+  DEPENDS:=+libelf +libbpf +libbfd
   KCONFIG:=
 endef
 
