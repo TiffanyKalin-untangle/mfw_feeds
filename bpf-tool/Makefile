@@ -6,6 +6,7 @@ PKG_MAINTAINER:=Tiffany Kalin <tkalin@untangle.com>
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/TiffanyKalin-untangle/bpfgen.git
 
+PKG_VERSION:=v0.1.0
 include $(INCLUDE_DIR)/package.mk
 
 define Package/bpf-tool
