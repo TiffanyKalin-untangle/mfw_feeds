@@ -3,6 +3,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=bpf-tool
 PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Tiffany Kalin <tkalin@untangle.com>
+PKG_SOURCE_VERSION:=master
 PKG_VERSION:=v0.1.0
 
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
