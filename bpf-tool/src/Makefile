@@ -33,7 +33,7 @@
 #
 
 CFLAGS += -std=gnu99 -O2 -W -Wall -Wextra -Wno-unused-parameter -Wshadow -I/home/untangles/openwrt/build_dir/toolchain-x86_64_gcc-7.3.0_musl/linux-4.14.131/tools/lib
-LIBS = -lbfd -lopcodes -lelf
+LIBS = -lbfd -lopcodes -lelf -lbpf
 
 include $(wildcard *.d)
 

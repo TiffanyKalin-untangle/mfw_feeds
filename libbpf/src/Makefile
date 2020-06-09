@@ -5,12 +5,10 @@ LIBBPF_VERSION := $(shell \
 	sort -rV | head -n1 | cut -d'_' -f2)
 LIBBPF_MAJOR_VERSION := $(firstword $(subst ., ,$(LIBBPF_VERSION)))
 
-TOPDIR = ..
-
-INCLUDES := -I. -I$(TOPDIR)/include -I$(TOPDIR)/include/uapi
+INCLUDES := -I. -I./include -I./include/uapi
 ALL_CFLAGS := $(INCLUDES)
 
-FEATURE_REALLOCARRAY := $(shell $(TOPDIR)/scripts/check-reallocarray.sh)
+FEATURE_REALLOCARRAY := $(shell ./scripts/check-reallocarray.sh)
 ifneq ($(FEATURE_REALLOCARRAY),)
 	ALL_CFLAGS += -DCOMPAT_NEED_REALLOCARRAY
 endif
@@ -42,7 +40,7 @@ endif
 HEADERS := bpf.h libbpf.h btf.h xsk.h libbpf_util.h \
 	   bpf_helpers.h bpf_helper_defs.h bpf_tracing.h \
 	   bpf_endian.h bpf_core_read.h libbpf_common.h
-UAPI_HEADERS := $(addprefix $(TOPDIR)/include/uapi/linux/,\
+UAPI_HEADERS := $(addprefix ./include/uapi/linux/,\
 			    bpf.h bpf_common.h btf.h)
 
 PC_FILE := $(OBJDIR)/libbpf.pc

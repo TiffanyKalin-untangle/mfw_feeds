@@ -9,6 +9,8 @@ PKG_LICENSE:=LGPL-2.1+
 
 include $(INCLUDE_DIR)/package.mk
 
+PKG_INSTALL:=1 
+
 define Package/libbpf
   SECTION:=libs
   CATEGORY:=Libraries
@@ -25,17 +27,17 @@ CONFIGURE_ARGS+= \
 	--enable-static \
 
 define Build/InstallDev
-	$(INSTALL_DIR) $(1)/usr/include
-	$(CP) $(PKG_INSTALL_DIR)/usr/include/libbpf $(1)/usr/include/
 	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libbpf.{a,so*} $(1)/usr/lib/
 	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libbpf.pc $(1)/usr/lib/pkgconfig/
+	$(INSTALL_DIR) $(1)/usr/include
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libbpf.{a,so*} $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libbpf*.pc $(1)/usr/lib/pkgconfig/
+	$(CP) $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include/
 endef
 
 define Package/libbpf/install
 	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libbpf.so.* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/libbpf.so* $(1)/usr/lib/
 endef
 
 $(eval $(call BuildPackage,libbpf))
