@@ -31,7 +31,7 @@ endef
 
 define Package/bpf-tool/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bpf-tool $(1)/usr/bin/bpf-tool
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bpftool $(1)/usr/bin/bpftool
 endef
 
 $(eval $(call BuildPackage,bpf-tool))
