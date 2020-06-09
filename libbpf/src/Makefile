@@ -8,10 +8,10 @@ LIBBPF_MAJOR_VERSION := $(firstword $(subst ., ,$(LIBBPF_VERSION)))
 INCLUDES := -I. -I./include -I./include/uapi
 ALL_CFLAGS := $(INCLUDES)
 
-FEATURE_REALLOCARRAY := $(shell ./scripts/check-reallocarray.sh)
-ifneq ($(FEATURE_REALLOCARRAY),)
+#FEATURE_REALLOCARRAY := $(shell ./scripts/check-reallocarray.sh)
+#ifneq ($(FEATURE_REALLOCARRAY),)
 	ALL_CFLAGS += -DCOMPAT_NEED_REALLOCARRAY
-endif
+#endif
 
 SHARED_CFLAGS += -fPIC -fvisibility=hidden -DSHARED
 
@@ -49,11 +49,11 @@ INSTALL = install
 
 DESTDIR ?=
 
-ifeq ($(shell uname -m),x86_64)
-	LIBSUBDIR := lib64
-else
+#ifeq ($(shell uname -m),x86_64)
+	#LIBSUBDIR := lib64
+#else
 	LIBSUBDIR := lib
-endif
+#endif
 
 PREFIX ?= /usr
 LIBDIR ?= $(PREFIX)/$(LIBSUBDIR)

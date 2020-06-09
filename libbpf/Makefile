@@ -32,12 +32,13 @@ define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libbpf.{a,so*} $(1)/usr/lib/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libbpf*.pc $(1)/usr/lib/pkgconfig/
-	$(CP) $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include/
+	$(CP) -r $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include
+	$(CP) -r $(PKG_BUILD_DIR)/include/* $(1)/usr/include/
 endef
 
 define Package/libbpf/install
 	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/libbpf.so* $(1)/usr/lib/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libbpf.so* $(1)/usr/lib/
 endef
 
 $(eval $(call BuildPackage,libbpf))

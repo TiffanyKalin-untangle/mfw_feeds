@@ -32,15 +32,15 @@
 # SOFTWARE.
 #
 
-CFLAGS += -std=gnu99 -O2 -W -Wall -Wextra -Wno-unused-parameter -Wshadow -I/home/untangles/openwrt/build_dir/toolchain-x86_64_gcc-7.3.0_musl/linux-4.14.131/tools/lib
-LIBS = -lbfd -lopcodes -lelf -lbpf
+CFLAGS += -std=gnu99 -O2 -W -Wall -Wextra -Wno-unused-parameter -Wshadow
+LDFLAGS += -lbfd -lopcodes -lelf -lbpf 
 
 include $(wildcard *.d)
 
 all: bpftool
 
 bpftool: bpf.o bpf-map.o bpf-prog.o bpf-common.o bpf-jit-disasm.o
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
 	rm -rf *.o *.d *~
