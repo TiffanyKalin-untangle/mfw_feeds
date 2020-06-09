@@ -4,14 +4,14 @@ PKG_NAME:=bpf-tool
 PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Tiffany Kalin <tkalin@untangle.com>
 
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/Netronome/bpf-tool.git
-PKG_HASH:=96d6c0a9bc94a7c01e07d9edc1b71c8c134d43bc
+#PKG_SOURCE_PROTO:=git
+#PKG_SOURCE_URL:=https://github.com/Netronome/bpf-tool.git
+#PKG_HASH:=96d6c0a9bc94a7c01e07d9edc1b71c8c134d43bc
 
 PKG_VERSION:=v0.1.0
-PKG_SOURCE_VERSION:=$(PKG_HASH)
-PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+#PKG_SOURCE_VERSION:=$(PKG_HASH)
+#PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+#PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 
 include $(INCLUDE_DIR)/package.mk
 
