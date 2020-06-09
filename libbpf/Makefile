@@ -13,6 +13,7 @@ define Package/libbpf
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=Libbpf
+  DEPENDS:=+libelf1
 endef
 
 define Package/libbpf/description
