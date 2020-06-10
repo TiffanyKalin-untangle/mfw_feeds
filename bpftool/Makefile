@@ -26,7 +26,7 @@ define Package/bpftool
   URL:=http://www.kernel.org 
 endef
 
-define Package/bpf-tool/description
+define Package/bpftool/description
 	Userspace bpf-tool
 endef
 
@@ -57,4 +57,4 @@ define Package/bpftool/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bpftool/bpftool $(1)/usr/bin/
 endef
 
-$(eval $(call BuildPackage,bpf-tool))
+$(eval $(call BuildPackage,bpftool))
