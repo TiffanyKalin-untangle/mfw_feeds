@@ -20,7 +20,7 @@ define Package/bpf-tool
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpf-tool
-  DEPENDS:=+libelf1 +libbpf +libbfd +libopcodes +libfts +libpthread
+  DEPENDS:=+libelf1 +libbpf +libbfd +libopcodes +musl-fts +libpthread
   KCONFIG:=CONFIG_BPF=y CONFIG_BPF_SYSCALL=y \
 	   CONFIG_BPF_JIT=y CONFIG_HAVE_EBPF_JIT=y 
 endef
