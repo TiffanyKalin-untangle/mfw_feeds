@@ -17,7 +17,7 @@ define Package/bpfgen
   SECTION:=net
   CATEGORY:=Network
   SUBMENU:=Firewall
-  TITLE:=Userspace bpf generator
+  TITLE:=BPF program generator
   URL:=https://github.com/untangle/bpfgen
   DEPENDS:=+libnftnl +libmnl +jansson
   KCONFIG:=CONFIG_BPF=y CONFIG_BPF_SYSCALL=y \
@@ -25,7 +25,7 @@ define Package/bpfgen
 endef
 
 define Package/bpfgen/description
-	Userspace bpf generator
+	BPF program generator
 endef
 
 define Package/bpfgen/install
