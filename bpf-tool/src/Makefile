@@ -43,7 +43,7 @@ CFLAGS += -I/home/untangles/openwrt/build_dir/toolchain-x86_64_gcc-7.3.0_musl/li
 #CFLAGS += -I/home/untangles/openwrt/build_dir/toolchain-x86_64_gcc-7.3.0_musl/linux-4.14.131/include/uapi
 #CFLAGS += -I/home/untangles/openwrt/build_dir/toolchain-x86_64_gcc-7.3.0_musl/linux-4.14.131/include
 CFLAGS += -DBPFTOOL_VERSION='"$(BPFTOOL_VERISON)"'
-LDFLAGS += -lbpf -lelf -lbfd -lopcodes /home/untangles/openwrt/build_dir/target-x86_64_musl/musl-fts-1.2.7/ipkg-install/usr/lib/libfts.a
+LDFLAGS += -lfts -lpthread -lbpf -lelf -lbfd -lopcodes
 
 include $(wildcard *.d)
 
