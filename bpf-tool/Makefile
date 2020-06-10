@@ -20,8 +20,7 @@ define Package/bpf-tool
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpf-tool
-  URL:=https://github.com/Netronome/bpf-tool.git
-  PKG_BUILD_DEPENDS:=libelf libbpf libbfd libopcodes
+  DEPENDS:=+libelf1 +libbpf +libbfd +libopcodes +musl-fts +libpthread
   KCONFIG:=CONFIG_BPF=y CONFIG_BPF_SYSCALL=y \
 	   CONFIG_BPF_JIT=y CONFIG_HAVE_EBPF_JIT=y 
 endef
@@ -32,7 +31,7 @@ endef
 
 define Package/bpf-tool/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bpf-tool $(1)/usr/bin/bpf-tool
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/bpftool $(1)/usr/bin/bpftool
 endef
 
 $(eval $(call BuildPackage,bpf-tool))
