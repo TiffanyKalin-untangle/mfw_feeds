@@ -4,7 +4,7 @@ PKG_NAME:=bpfgen
 PKG_LICENSE:=GPL-2.0
 PKG_MAINTAINER:=Tiffany Kalin <tkalin@untangle.com>
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/TiffanyKalin-untangle/bpfgen.git
+PKG_SOURCE_URL:=https://github.com/untangle/bpfgen.git
 
 include ../version.mk
 
@@ -18,7 +18,7 @@ define Package/bpfgen
   CATEGORY:=Network
   SUBMENU:=Firewall
   TITLE:=Userspace bpf generator
-  URL:=https://github.com/TiffanyKalin-untangle/bpfgen
+  URL:=https://github.com/untangle/bpfgen
   DEPENDS:=+libnftnl +libmnl +jansson
   KCONFIG:=CONFIG_BPF=y CONFIG_BPF_SYSCALL=y \
 	   CONFIG_BPF_JIT=y CONFIG_HAVE_EBPF_JIT=y 
