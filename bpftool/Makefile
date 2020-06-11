@@ -20,7 +20,7 @@ define Package/bpftool
   SUBMENU:=Firewall
   TITLE:=Linux bpf monitoring tool
   VERSION:=$(LINUX_VERSION)-$(PKG_RELEASe)
-  DEPENDS:=+libelf1 +libbpf +libbfd +libopcodes +musl-fts +libpthread
+  DEPENDS:=+libelf1 +libopcodes +libbfd +musl-fts +libpthread
   KCONFIG:=CONFIG_BPF=y CONFIG_BPF_SYSCALL=y \
 	   CONFIG_BPF_JIT=y CONFIG_HAVE_EBPF_JIT=y
   URL:=http://www.kernel.org 
